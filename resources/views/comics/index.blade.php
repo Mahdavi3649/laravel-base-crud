@@ -4,7 +4,12 @@
 @section('content')
 
     <div class="container">
-            <h1 class="p-4 text-center fw-bolder text-success">Archive Comics</h1>
+
+        <div class="heading d-flex justify-content-between align-items-center mb-5">
+            <h1 class="p-4 fw-bolder text-success">Archive Comics</h1>
+            <a name="" id="" class="btn btn-success d-block" href="{{route('comics.create')}}">Create Comic</a>
+        </div>
+        
             <table class="table fs-6">
                 <thead>
                     <tr>

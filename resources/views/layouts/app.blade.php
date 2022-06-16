@@ -14,7 +14,12 @@
         
     </head>
     <body>
-        <header></header>
+        <header>
+            <nav class="nav justify-content-center bg-success fw-bold">
+              <a class="nav-link text-white" href="{{route('home')}}">Home</a>
+              <a class="nav-link text-white" href="{{route('comics.index')}}">Comics</a>
+            </nav>
+        </header>
         <main>
           @yield('content')
         </main>
