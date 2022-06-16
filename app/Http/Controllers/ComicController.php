@@ -39,7 +39,14 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->all());
+        //dd($request->all(), $request->title);
+
+        $data = $request->all();
+        Comic::create($data);
+
+        // pattern POST-REDIRECT-GET
+        return redirect()->route('comics.index');
+        
     }
 
     /**
