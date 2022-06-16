@@ -23,7 +23,7 @@
 
             <div class="form-group">
             <label for="price">Price</label>
-            <input type="text" name="price" id="price" class="form-control" placeholder="price" aria-describedby="priceHelper">
+            <input type="number" name="price" id="price" class="form-control" placeholder="price" aria-describedby="priceHelper">
             <small id="priceHelper" class="text-muted">Type comics price</small>
             </div>
 
