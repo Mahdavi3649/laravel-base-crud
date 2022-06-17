@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use App\Http\Requests\ComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -36,13 +37,27 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
         //
         //dd($request->all(), $request->title);
+      /* 
+        $validate_data = $request->validate([
+            'title' => 'required|max:50',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required',
+            'sale_date' => 'required',
+            'type' => 'required'
 
-        $data = $request->all();
-        Comic::create($data);
+        ]);
+         */
+
+        //dd($validate_data);
+
+        //$data = $request->all();
+        $validate_data = $request->validated();
+        Comic::create($validate_data);
 
         // pattern POST-REDIRECT-GET
         return redirect()->route('comics.index');
@@ -70,6 +85,7 @@ class ComicController extends Controller
     public function edit(Comic $comic)
     {
         //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -79,9 +95,13 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
         //
+        $validate_data = $request->validated();
+        //$validate_data = $request->all();
+        $comic->update($validate_data);
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -92,6 +112,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }
