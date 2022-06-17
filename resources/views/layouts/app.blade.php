@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <nav class="nav justify-content-center bg-success fw-bold">
+            <nav class="nav justify-content-center bg-dark fw-bold">
               <a class="nav-link text-white" href="{{route('home')}}">Home</a>
               <a class="nav-link text-white" href="{{route('comics.index')}}">Comics</a>
             </nav>
@@ -23,9 +23,11 @@
         <main>
           @yield('content')
         </main>
-        <footer></footer>
+        <footer>
+          
+        </footer>
 
 
-        <link rel="stylesheet" href="{{asset('js/app.js')}}">
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>

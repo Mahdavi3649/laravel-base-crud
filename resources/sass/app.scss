@@ -2,5 +2,17 @@
 @use 'bootstrap';
 
 body{
-    background-color: #bce7ba;
+    background-color: #eacfdc;
 }
+
+#create:hover{
+    color: gold;
+    background-color: purple;
+    transform: scale(1.2);
+}
+
+.btn-purple{
+    background-color: purple;
+    color: white;
+}
+

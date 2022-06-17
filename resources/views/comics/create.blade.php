@@ -85,7 +85,7 @@
 
             </div>
 
-            <button type="submit" class="btn btn-success mt-4">Add Comic</button>
+            <button type="submit" class="btn btn-purple mt-2">Add Comic</button>
         </form>
 
 </div>
